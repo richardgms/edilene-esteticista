@@ -24,9 +24,9 @@ export function Transformations() {
                         return (
                             <div
                                 key={transform.id}
-                                className="bg-white rounded-2xl overflow-hidden flex flex-col transition-all duration-500 border border-secondary/50 h-full cursor-pointer group hover:-translate-y-1 hover:shadow-xl hover:shadow-secondary/30"
+                                className="bg-secondary rounded-2xl overflow-hidden flex flex-col transition-all duration-500 border border-secondary/50 h-full cursor-pointer group hover:-translate-y-1 hover:shadow-xl hover:shadow-accent-dark/10"
                             >
-                                <div className="px-6 py-4 border-b border-secondary flex justify-center bg-white z-10 shrink-0">
+                                <div className="px-6 py-4 border-b border-secondary flex justify-center bg-secondary z-10 shrink-0">
                                     <span className="font-serif font-bold text-accent-dark text-lg text-center leading-tight">
                                         {transform.label}
                                     </span>
@@ -38,7 +38,7 @@ export function Transformations() {
                                         aspectRatio="aspect-square"
                                     />
                                     {transform.description && (
-                                        <div className="p-4 md:p-6 bg-white flex-grow flex flex-col justify-center relative">
+                                        <div className="p-4 md:p-6 bg-secondary flex-grow flex flex-col justify-center relative">
                                             <div className="flex justify-center mb-2 opacity-20">
                                                 <svg viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6 text-accent-dark">
                                                     <path d="M4.583 17.321C3.553 16.227 3 15 3 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311 1.804.167 3.226 1.648 3.226 3.489a3.5 3.5 0 01-3.5 3.5c-1.073 0-2.099-.49-2.748-1.179zm10 0C13.553 16.227 13 15 13 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311 1.804.167 3.226 1.648 3.226 3.489a3.5 3.5 0 01-3.5 3.5c-1.073 0-2.099-.49-2.748-1.179z" />

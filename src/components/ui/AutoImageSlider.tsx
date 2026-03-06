@@ -58,7 +58,7 @@ export function AutoImageSlider({ images, priority = false, unoptimized = false,
                                 priority={priority && i === 0}
                                 quality={90}
                             />
-                            <div className="absolute top-4 left-4 z-10 px-3 py-1 rounded text-xs font-bold tracking-wider bg-white/90 backdrop-blur-sm text-accent-dark border border-white/20 shadow-sm">
+                            <div className="absolute top-4 left-4 z-10 px-3 py-1 rounded text-xs font-bold tracking-wider bg-primary/90 backdrop-blur-sm text-accent-light border border-white/10 shadow-sm">
                                 {slideData.badge.toUpperCase()}
                             </div>
                         </div>
@@ -73,7 +73,7 @@ export function AutoImageSlider({ images, priority = false, unoptimized = false,
                     {images.map((_, i) => (
                         <div
                             key={i}
-                            className={`h-1.5 rounded-full transition-all duration-300 ${i === currentIndex ? "w-6 bg-white" : "w-1.5 bg-white/50"
+                            className={`h-1.5 rounded-full transition-all duration-300 ${i === currentIndex ? "w-6 bg-accent-dark" : "w-1.5 bg-accent-dark/50"
                                 }`}
                         />
                     ))}

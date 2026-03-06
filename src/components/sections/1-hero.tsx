@@ -53,7 +53,7 @@ export function Hero() {
                             </a>
                             <a
                                 href="#services"
-                                className="bg-white/90 backdrop-blur-sm border border-accent-dark/30 text-accent-dark rounded-full px-10 py-5 text-lg font-medium transition-all duration-300 hover:bg-white active:scale-95 text-center shadow-md"
+                                className="bg-secondary/90 backdrop-blur-sm border border-accent-dark/30 text-accent-light rounded-full px-10 py-5 text-lg font-medium transition-all duration-300 hover:bg-secondary active:scale-95 text-center shadow-md"
                             >
                                 Conhecer Serviços
                             </a>

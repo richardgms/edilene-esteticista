@@ -8,7 +8,7 @@ import { useMarquee } from "@/hooks/useMarquee";
 
 function CertCard({ cert }: { cert: typeof clinicData.courses[number] }) {
     return (
-        <div className="group flex-shrink-0 w-44 md:w-72 bg-secondary/10 rounded-2xl border border-secondary transition-all duration-300 hover:bg-white hover:shadow-xl hover:shadow-secondary/30 overflow-hidden mx-2 md:mx-3">
+        <div className="group flex-shrink-0 w-44 md:w-72 bg-secondary/10 rounded-2xl border border-secondary transition-all duration-300 hover:bg-secondary hover:shadow-xl hover:shadow-accent-dark/10 overflow-hidden mx-2 md:mx-3">
             {/* Image */}
             <div className="w-full aspect-[1.3/1] bg-secondary/20 flex items-center justify-center border-b border-dashed border-accent-dark/20 group-hover:border-accent-dark/40 transition-colors overflow-hidden relative">
                 {cert.image ? (

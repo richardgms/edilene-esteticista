@@ -11,7 +11,7 @@ export function Services() {
     const activeCategory = clinicData.services.find(c => c.category === activeTab);
 
     return (
-        <section id="services" className="w-full py-10 md:py-16 px-4 bg-white flex flex-col items-center">
+        <section id="services" className="w-full py-10 md:py-16 px-4 bg-primary flex flex-col items-center">
             <FadeIn>
                 <h2 className="text-3xl md:text-5xl font-serif font-bold mb-4 md:mb-8 text-center text-heading">
                     Nossos Protocolos

@@ -4,7 +4,7 @@ import { Star } from "lucide-react";
 
 export function Testimonials() {
     return (
-        <section id="testimonials" className="w-full py-12 md:py-24 bg-white flex flex-col items-center overflow-hidden">
+        <section id="testimonials" className="w-full py-12 md:py-24 bg-primary flex flex-col items-center overflow-hidden">
             <div className="w-full max-w-6xl px-4 flex flex-col items-center text-center mb-4 md:mb-16">
                 <FadeIn className="max-w-2xl">
                     <h2 className="text-2xl md:text-5xl font-serif font-bold mb-3 md:mb-6 text-heading">
@@ -17,11 +17,11 @@ export function Testimonials() {
             </div>
 
             <FadeIn delay={0.2} direction="up" className="w-full max-w-6xl px-4">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 justify-center items-stretch bg-white">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 justify-center items-stretch bg-primary">
                     {clinicData.testimonials.slice(0, 3).map((testimonial) => (
                         <div
                             key={testimonial.id}
-                            className="bg-white rounded-2xl p-3 md:p-8 border border-secondary/50 flex flex-col transition-all duration-300"
+                            className="bg-secondary rounded-2xl p-3 md:p-8 border border-secondary/50 flex flex-col transition-all duration-300"
                         >
                             <div className="flex justify-center mb-2 md:mb-4 opacity-15">
                                 <svg viewBox="0 0 24 24" fill="currentColor" className="w-8 h-8 text-accent-dark">

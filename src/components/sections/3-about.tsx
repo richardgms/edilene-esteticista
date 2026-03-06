@@ -40,7 +40,7 @@ export function About() {
                         ))}
                     </div>
 
-                    <blockquote className="border-l-4 border-accent-dark pl-6 italic text-xl md:text-2xl font-serif text-text-main bg-white/50 py-4 pr-4 rounded-r-xl">
+                    <blockquote className="border-l-4 border-accent-dark pl-6 italic text-xl md:text-2xl font-serif text-text-main bg-secondary/50 py-4 pr-4 rounded-r-xl">
                         "{clinicData.about.quote}"
                     </blockquote>
                 </FadeIn>

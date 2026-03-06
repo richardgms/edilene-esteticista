@@ -19,7 +19,7 @@ export function WhatsAppFAB() {
             </svg>
 
             {/* Tooltip on hover */}
-            <span className="absolute right-full mr-4 top-1/2 -translate-y-1/2 bg-white border border-secondary/50 text-text-main px-4 py-2 rounded-xl text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none hidden md:block">
+            <span className="absolute right-full mr-4 top-1/2 -translate-y-1/2 bg-accent-dark text-primary border-none px-4 py-2 rounded-xl text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none hidden md:block">
                 Agende sua avaliação
             </span>
 

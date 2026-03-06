@@ -31,7 +31,7 @@ export function FlipCard({ title, description, iconName, iconImage, isLarge }: F
                 animate={{ rotateY: isFlipped ? 180 : 0 }}
             >
                 {/* Front */}
-                <div className="absolute w-full h-full backface-hidden bg-white border border-secondary/50 rounded-2xl p-6 flex flex-col justify-center items-center text-center">
+                <div className="absolute w-full h-full backface-hidden bg-secondary border border-secondary/50 rounded-2xl p-6 flex flex-col justify-center items-center text-center">
                     {iconImage ? (
                         <div
                             className="relative mb-4 rounded-lg overflow-hidden shrink-0"

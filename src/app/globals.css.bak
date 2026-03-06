@@ -8,13 +8,13 @@
 
 @theme {
   /* Colors */
-  --color-primary: #0a0a0a; /* Fundo predominante (Preto) */
-  --color-secondary: #171717; /* Fundo secundário para seções/cards */
-  --color-accent-light: #F3E5AB; /* Dourado suave para hover/efeitos */
-  --color-accent-dark: #D4AF37; /* Dourado puro principal */
-  --color-heading: #FFFFFF; /* Branco para títulos */
-  --color-text-main: #F8F8F8; /* Branco gelo para textos gerais */
-  --color-text-light: #A3A3A3; /* Cinza para textos de apoio */
+  --color-primary: #FFFFFF;
+  --color-secondary: #F2E8DF;
+  --color-accent-light: #E8B4B8;
+  --color-accent-dark: #C4737A;
+  --color-heading: #5a1f28;
+  --color-text-main: #5a1f28;
+  --color-text-light: #8c5a62;
 
   /* Typography */
   --font-serif: var(--font-jazmin), "Playfair Display", serif;
@@ -52,15 +52,15 @@
   }
 
   .glass-nav {
-    @apply bg-primary/80 backdrop-blur-lg border-b border-white/5;
+    @apply bg-white/90 backdrop-blur-lg;
   }
 
   .btn-primary {
-    @apply bg-accent-dark text-primary rounded-full px-6 py-3 font-medium transition-all duration-300 hover:scale-105 active:scale-95 hover:bg-accent-light;
+    @apply bg-accent-dark text-white rounded-full px-6 py-3 font-medium transition-all duration-300 hover:scale-105 active:scale-95;
   }
 
   .btn-secondary {
-    @apply bg-secondary border border-accent-dark text-accent-dark rounded-full px-6 py-3 font-medium transition-all duration-300 hover:bg-accent-dark/10 hover:scale-105 active:scale-95;
+    @apply bg-secondary border border-accent-dark text-accent-dark rounded-full px-6 py-3 font-medium transition-all duration-300 hover:bg-white/50 hover:scale-105 active:scale-95;
   }
 
   .perspective-1000 {
