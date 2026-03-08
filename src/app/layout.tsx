@@ -57,7 +57,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="antialiased selection:bg-[#E8B4B8]/30 selection:text-[#2C2C2C]">
+      <body className="antialiased selection:bg-[#D4AF37]/30 selection:text-[#F8F8F8]">
         <Navbar />
         {children}
         <WhatsAppFAB />
