@@ -9,7 +9,7 @@ import SplitText from "@/components/ui/SplitText";
 
 export function Hero() {
     return (
-        <section className="relative w-full min-h-[60dvh] lg:min-h-[100dvh] flex flex-col justify-center px-6 pt-24 pb-8 md:px-20 lg:px-40 overflow-hidden bg-primary flex-1">
+        <section className="relative w-full min-h-[60dvh] lg:min-h-[100dvh] flex flex-col justify-center px-6 pt-24 pb-8 md:px-20 lg:px-12 xl:px-40 overflow-hidden bg-primary flex-1">
 
             {/* Background Effects */}
             <div className="absolute top-[-10%] left-[-10%] w-[60%] h-[60%] rounded-full blur-[120px] pointer-events-none z-0" style={{ background: 'radial-gradient(circle, #ebd27520, #c0984710)' }}></div>
@@ -33,7 +33,7 @@ export function Hero() {
                         </span>
                     </FadeIn>
 
-                    <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif mb-6 md:mb-10 text-white leading-[1.1] tracking-tight flex flex-col items-start min-h-[160px] md:min-h-[220px]">
+                    <h1 className="text-5xl md:text-7xl lg:text-6xl xl:text-8xl font-serif mb-6 md:mb-10 text-white leading-[1.1] tracking-tight flex flex-col items-start min-h-[160px] md:min-h-[220px]">
                         <SplitText text="É hora de" delay={30} textAlign="left" className="block" animateOnLoad />
                         <SplitText text="cuidar da sua" delay={50} textAlign="left" className="italic block mt-1" animateOnLoad />
                         <SplitText text="autoestima!" delay={70} textAlign="left" className="text-gradient-gold block" animateOnLoad />
@@ -90,9 +90,8 @@ export function Hero() {
                             className="relative z-10"
                         >
                             <div
+                                className="w-[350px] h-[175px] lg:w-[400px] lg:h-[200px] xl:w-[500px] xl:h-[250px]"
                                 style={{
-                                    width: 500,
-                                    height: 250,
                                     background: 'linear-gradient(90deg, #c09847, #ebd275, #c49d45)',
                                     maskImage: 'url(/icons/logo.svg)',
                                     maskSize: 'contain',

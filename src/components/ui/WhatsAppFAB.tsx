@@ -42,7 +42,7 @@ export function WhatsAppFAB() {
 
             {/* Tooltip on hover */}
             <span
-                className="absolute right-full mr-4 top-1/2 -translate-y-1/2 bg-primary/95 px-4 py-2 rounded-xl text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none hidden md:block z-20 text-gradient-gold"
+                className="absolute right-full mr-4 top-1/2 -translate-y-1/2 bg-primary/95 px-4 py-2 rounded-xl text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none hidden md:block z-20"
                 style={{
                     backgroundImage: 'linear-gradient(#0a0a0af2, #0a0a0af2), linear-gradient(90deg, #c09847, #ebd275, #c49d45)',
                     backgroundOrigin: 'border-box',
@@ -50,7 +50,7 @@ export function WhatsAppFAB() {
                     border: '1px solid transparent',
                 }}
             >
-                Agende sua avaliação
+                <span className="text-gradient-gold">Agende sua avaliação</span>
             </span>
         </a>
     );
