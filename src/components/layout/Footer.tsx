@@ -1,72 +1,132 @@
 import { clinicData } from "@/lib/data";
-import { Instagram, MapPin, Clock } from "lucide-react";
+import { Instagram, MapPin, Clock, ArrowUpRight } from "lucide-react";
+import Link from "next/link";
 import Image from "next/image";
 
 export function Footer() {
     return (
-        <footer className="w-full bg-primary border-t border-secondary text-white py-6 md:py-16 px-4">
-            <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-12">
-                {/* Brand */}
-                <div className="flex flex-col gap-1.5 md:gap-4">
-                    <div
-                        className="w-48 h-16 md:w-64 md:h-20"
-                        style={{
-                            background: 'linear-gradient(90deg, #c09847, #ebd275, #c49d45)',
-                            maskImage: 'url(/icons/logo.svg)',
-                            maskSize: 'contain',
-                            maskRepeat: 'no-repeat',
-                            maskPosition: 'left',
-                            WebkitMaskImage: 'url(/icons/logo.svg)',
-                            WebkitMaskSize: 'contain',
-                            WebkitMaskRepeat: 'no-repeat',
-                            WebkitMaskPosition: 'left'
-                        }}
-                    />
-                    {/* Slogan: compacto no mobile */}
-                    <p className="text-xs md:text-base text-gray-400 md:text-gray-300 italic leading-snug">
+        <footer className="w-full bg-primary border-t border-[#D4AF37]/20 text-white py-12 md:py-16 px-4">
+            <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-8">
+                {/* Brand & Identity */}
+                <div className="md:col-span-5 flex flex-col gap-6">
+                    <div className="relative w-48 h-16 md:w-56 md:h-20">
+                        {/* 
+                          Applying next/image for better optimization.
+                          Assuming the user has the /icons/logo.svg available, we use the mask technique but structured safely.
+                        */}
+                        <div
+                            className="absolute inset-0"
+                            style={{
+                                background: 'linear-gradient(90deg, #c09847, #ebd275, #c49d45)',
+                                maskImage: 'url(/icons/logo.svg)',
+                                maskSize: 'contain',
+                                maskRepeat: 'no-repeat',
+                                maskPosition: 'left',
+                                WebkitMaskImage: 'url(/icons/logo.svg)',
+                                WebkitMaskSize: 'contain',
+                                WebkitMaskRepeat: 'no-repeat',
+                                WebkitMaskPosition: 'left'
+                            }}
+                        />
+                    </div>
+                    <p className="text-sm md:text-base text-gray-300 italic leading-relaxed max-w-sm">
                         "{clinicData.slogan}"
                     </p>
-                    {/* RT: numa linha só no mobile | bloco no desktop */}
-                    <p className="text-[11px] text-gray-400 md:hidden">
-                        <span className="font-medium" style={{ color: '#ebd275' }}>Resp. Técnica</span> · {clinicData.professionalName}
-                    </p>
-                    <div className="hidden md:block mt-4">
-                        <span className="font-bold block mb-2" style={{ color: '#ebd275' }}>Responsável Técnica</span>
-                        <span className="text-gray-300 block">{clinicData.professionalName}</span>
+                    <div className="mt-2">
+                        <span className="font-semibold block mb-1 text-[#ebd275] text-sm uppercase tracking-wider">
+                            Responsável Técnica
+                        </span>
+                        <span className="text-gray-200 text-lg">{clinicData.professionalName}</span>
                     </div>
                 </div>
 
-                {/* Contacts */}
-                <div className="flex flex-col gap-2 md:gap-4">
-                    <h4 className="hidden md:block font-bold text-lg" style={{ color: '#ebd275' }}>Atendimento</h4>
-                    {/* Mobile: itens em linha com flex-wrap | Desktop: coluna */}
-                    <div className="flex flex-row flex-wrap gap-x-5 gap-y-2 md:flex-col md:gap-4">
-                        <div className="flex items-center gap-2 text-gray-300">
-                            <WhatsAppIcon style={{ color: '#ebd275' }} className="w-4 h-4 md:w-5 md:h-5 flex-shrink-0" />
-                            <a href={`https://wa.me/${clinicData.phone}`} className="hover:text-white transition-colors text-xs md:text-base">
-                                (84) 9 8146-2978
-                            </a>
+                {/* Navigation Links */}
+                <div className="md:col-span-3 flex flex-col gap-4">
+                    <h4 className="font-semibold text-lg text-[#ebd275] mb-2">Navegação</h4>
+                    <nav className="flex flex-col gap-3">
+                        <Link href="#inicio" className="text-gray-300 hover:text-white transition-colors flex items-center gap-1 w-fit">
+                            Início <ArrowUpRight className="w-3 h-3 opacity-50" />
+                        </Link>
+                        <Link href="#sobre" className="text-gray-300 hover:text-white transition-colors flex items-center gap-1 w-fit">
+                            Sobre Edilene <ArrowUpRight className="w-3 h-3 opacity-50" />
+                        </Link>
+                        <Link href="#servicos" className="text-gray-300 hover:text-white transition-colors flex items-center gap-1 w-fit">
+                            Tratamentos <ArrowUpRight className="w-3 h-3 opacity-50" />
+                        </Link>
+                        <Link href="#depoimentos" className="text-gray-300 hover:text-white transition-colors flex items-center gap-1 w-fit">
+                            Resultados <ArrowUpRight className="w-3 h-3 opacity-50" />
+                        </Link>
+                    </nav>
+                </div>
+
+                {/* Contacts & Location */}
+                <div className="md:col-span-4 flex flex-col gap-4">
+                    <h4 className="font-semibold text-lg text-[#ebd275] mb-2">Atendimento</h4>
+                    <div className="flex flex-col gap-5">
+                        <a
+                            href={`https://wa.me/${clinicData.phone}?text=${encodeURIComponent(clinicData.whatsappMessage)}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-start gap-3 group"
+                        >
+                            <div className="bg-[#D4AF37]/10 p-2 rounded-full group-hover:bg-[#D4AF37]/20 transition-colors">
+                                <WhatsAppIcon className="w-5 h-5 text-[#ebd275]" />
+                            </div>
+                            <div className="flex flex-col">
+                                <span className="text-sm text-gray-400">WhatsApp</span>
+                                <span className="text-gray-200 group-hover:text-white transition-colors">(84) 9 8146-2978</span>
+                            </div>
+                        </a>
+
+                        <div className="flex items-start gap-3">
+                            <div className="bg-[#D4AF37]/10 p-2 rounded-full">
+                                <MapPin className="w-5 h-5 text-[#ebd275]" />
+                            </div>
+                            <div className="flex flex-col">
+                                <span className="text-sm text-gray-400">Localização</span>
+                                <span className="text-gray-200">
+                                    Rua Gilberto Roberto Gomes 20b<br />
+                                    Bairro Cajupiranga<br />
+                                    Parnamirim, RN
+                                </span>
+                            </div>
                         </div>
-                        <div className="flex items-center gap-2 text-gray-300">
-                            <MapPin style={{ color: '#ebd275' }} className="w-4 h-4 md:w-5 md:h-5 flex-shrink-0" />
-                            <span className="text-xs md:text-base">{clinicData.address}</span>
+
+                        <div className="flex items-start gap-3">
+                            <div className="bg-[#D4AF37]/10 p-2 rounded-full">
+                                <Clock className="w-5 h-5 text-[#ebd275]" />
+                            </div>
+                            <div className="flex flex-col">
+                                <span className="text-sm text-gray-400">Horário</span>
+                                <span className="text-gray-200">{clinicData.workingHours}</span>
+                            </div>
                         </div>
-                        <div className="flex items-center gap-2 text-gray-300">
-                            <Clock style={{ color: '#ebd275' }} className="w-4 h-4 md:w-5 md:h-5 flex-shrink-0" />
-                            <span className="text-xs md:text-base">{clinicData.workingHours}</span>
-                        </div>
-                        <div className="flex items-center gap-2 text-gray-300">
-                            <Instagram style={{ color: '#ebd275' }} className="w-4 h-4 md:w-5 md:h-5 flex-shrink-0" />
-                            <a href={clinicData.instagram} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors text-xs md:text-base">
-                                {clinicData.instagramHandle}
-                            </a>
-                        </div>
+
+                        <a
+                            href={clinicData.instagram}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-start gap-3 group"
+                        >
+                            <div className="bg-[#D4AF37]/10 p-2 rounded-full group-hover:bg-[#D4AF37]/20 transition-colors">
+                                <Instagram className="w-5 h-5 text-[#ebd275]" />
+                            </div>
+                            <div className="flex flex-col">
+                                <span className="text-sm text-gray-400">Instagram</span>
+                                <span className="text-gray-200 group-hover:text-white transition-colors">{clinicData.instagramHandle}</span>
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>
 
-            <div className="max-w-6xl mx-auto mt-6 md:mt-16 pt-4 md:pt-8 border-t border-gray-700 text-center text-gray-400 text-xs md:text-sm">
+            {/* Copyright Bar */}
+            <div className="max-w-6xl mx-auto mt-12 pt-6 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs md:text-sm text-gray-400">
                 <p>© {new Date().getFullYear()} {clinicData.name}. Todos os direitos reservados.</p>
+                <div className="flex gap-4">
+                    <Link href="#" className="hover:text-white transition-colors">Termos de Uso</Link>
+                    <Link href="#" className="hover:text-white transition-colors">Política de Privacidade</Link>
+                </div>
             </div>
         </footer>
     );

@@ -24,8 +24,38 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: `${clinicData.name} | Estética Avançada`,
-  description: clinicData.about.metaDescription,
+  title: `${clinicData.name} | Estética Avançada em Parnamirim RN`,
+  description: "Transforme sua autoestima com tratamentos de Estética Avançada e Tricologia em Parnamirim RN. Agende sua avaliação gratuita com Edilene Barros hoje! ✓",
+  keywords: ["estética avançada", "tricologia", "limpeza de pele", "drenagem linfática", "Parnamirim RN", "Cajupiranga", "Edilene Barros", "esteticista"],
+  authors: [{ name: clinicData.name }],
+  creator: clinicData.name,
+  openGraph: {
+    type: "website",
+    locale: "pt_BR",
+    url: "https://edileneestetica.com.br",
+    title: `${clinicData.name} | Estética Avançada em Parnamirim RN`,
+    description: "Transforme sua autoestima com tratamentos de Estética Avançada e Tricologia em Parnamirim RN. Agende sua avaliação gratuita com Edilene Barros hoje!",
+    siteName: clinicData.name,
+    images: [
+      {
+        url: "https://edileneestetica.com.br/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: clinicData.name,
+      },
+    ],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
 };
 
 export default function RootLayout({
@@ -41,11 +71,26 @@ export default function RootLayout({
     "@id": "https://edileneestetica.com.br",
     "url": "https://edileneestetica.com.br",
     "telephone": `+${clinicData.phone}`,
+    "priceRange": "$$",
     "address": {
       "@type": "PostalAddress",
-      "addressLocality": "Natal",
+      "streetAddress": "Rua Gilberto Roberto Gomes 20b, Bairro Cajupiranga",
+      "addressLocality": "Parnamirim",
       "addressRegion": "RN",
       "addressCountry": "BR"
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday"
+      ],
+      "opens": "08:00",
+      "closes": "18:00"
     }
   };
 
