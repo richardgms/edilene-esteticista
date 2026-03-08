@@ -1,68 +1,116 @@
-import Image from "next/image";
+"use client";
+
 import { clinicData } from "@/lib/data";
 import { getWhatsAppUrl } from "@/lib/utils";
 import { FadeIn } from "@/components/ui/FadeIn";
-import heroBg from "../../../public/images/hero.webp";
+
+import { motion } from "framer-motion";
 
 export function Hero() {
     return (
-        <section className="relative w-full h-[100dvh] flex flex-col px-10 py-12 md:px-40 md:py-16 overflow-hidden">
-            <Image
-                src={heroBg}
-                alt="Edilene Barros"
-                fill
-                priority
-                fetchPriority="high"
-                unoptimized={true}
-                sizes="100vw"
-                className="object-cover object-[80%_top] md:object-[center_top] z-0"
-            />
+        <section className="relative w-full min-h-[60dvh] lg:min-h-[100dvh] flex flex-col justify-center px-6 pt-24 pb-8 md:px-20 lg:px-40 overflow-hidden bg-primary flex-1">
 
-            {/* Overlay Gradient for better readability */}
-            <div className="absolute inset-0 bg-linear-to-b from-black/20 via-transparent to-black/40 z-5" />
+            {/* Background Effects */}
+            <div className="absolute top-[-10%] left-[-10%] w-[60%] h-[60%] rounded-full blur-[120px] pointer-events-none z-0" style={{ background: 'radial-gradient(circle, #ebd27520, #c0984710)' }}></div>
+            <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] rounded-full blur-[100px] pointer-events-none z-0" style={{ background: 'radial-gradient(circle, #c49d4515, #ebd27508)' }}></div>
 
-            {/* Top Branding */}
-            <div className="relative z-10 w-full mb-auto">
-                <FadeIn delay={0.1} direction="down">
-                    <span className="text-white text-2xl md:text-3xl font-serif tracking-tight opacity-90">
-                        Edilene Barros
-                    </span>
-                </FadeIn>
-            </div>
+            {/* Subtle animated overlay */}
+            <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 0.05 }}
+                transition={{ duration: 2 }}
+                className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/floral-flourish.png')] pointer-events-none z-1"
+            ></motion.div>
 
-            {/* Main Content Area */}
-            <div className="relative z-10 w-full flex flex-col items-start mt-auto mb-20 md:mb-32">
-                <div className="max-w-4xl text-left">
-                    <FadeIn delay={0.2} direction="right">
-                        <h1 className="text-6xl md:text-8xl lg:text-[6.2rem] font-serif mb-10 text-white leading-[1.05] tracking-tight drop-shadow-md">
-                            É hora de<br />
-                            cuidar da sua<br />
-                            autoestima!
+            <div className="relative z-10 w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+                {/* Left Column: Content */}
+                <div className="flex flex-col items-start">
+                    <FadeIn delay={0.2} direction="down">
+                        <span className="text-gradient-gold uppercase tracking-[0.3em] text-[12px] md:text-sm font-medium mb-8 block whitespace-nowrap">
+                            Cuidado que transforma vidas
+                        </span>
+                    </FadeIn>
+
+                    <FadeIn delay={0.3} direction="right">
+                        <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif mb-6 md:mb-10 text-white leading-[1.1] tracking-tight">
+                            É hora de <br />
+                            <span className="italic block mt-1">cuidar da sua</span>
+                            <span className="text-gradient-gold">autoestima!</span>
                         </h1>
                     </FadeIn>
 
-                    <FadeIn delay={0.4} direction="up">
-                        <div className="flex flex-row gap-5 flex-wrap">
+                    <FadeIn delay={0.5} direction="up">
+                        <p className="text-text-light text-lg md:text-xl max-w-lg mb-6 md:mb-14 leading-relaxed">
+                            Cada cuidado criado para o seu corpo, a sua pele, a sua história.
+                        </p>
+                    </FadeIn>
+
+                    <FadeIn delay={0.6} direction="up">
+                        <div className="flex flex-row gap-2 md:gap-5 w-full md:w-auto">
                             <a
-                                href={getWhatsAppUrl(clinicData.phone, clinicData.whatsappMessage)}
+                                href={clinicData.bookingUrl}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="bg-accent-dark text-white rounded-full px-10 py-5 text-lg font-medium transition-all duration-300 hover:brightness-110 active:scale-95 text-center shadow-lg"
+                                className="flex-1 md:flex-none btn-primary text-center py-3.5 md:py-4 px-2 md:px-10 text-[12px] md:text-sm"
                             >
                                 Agendar Avaliação
                             </a>
                             <a
                                 href="#services"
-                                className="bg-secondary/90 backdrop-blur-sm border border-accent-dark/30 text-accent-light rounded-full px-10 py-5 text-lg font-medium transition-all duration-300 hover:bg-secondary active:scale-95 text-center shadow-md"
+                                className="flex-1 md:flex-none btn-secondary text-center py-3.5 md:py-4 px-2 md:px-10 text-[12px] md:text-sm"
                             >
                                 Conhecer Serviços
                             </a>
                         </div>
                     </FadeIn>
                 </div>
+
+                {/* Right Column: Logo Visual */}
+                <div className="hidden lg:flex justify-center items-center relative">
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 1.2, delay: 0.4 }}
+                        className="relative"
+                    >
+                        {/* Aura effect around logo */}
+                        <div className="absolute inset-0 rounded-full blur-[80px] animate-pulse" style={{ background: 'radial-gradient(circle, #ebd27520, #c0984710)' }}></div>
+
+                        <motion.div
+                            animate={{
+                                y: [0, -20, 0],
+                            }}
+                            transition={{
+                                duration: 6,
+                                repeat: Infinity,
+                                ease: "easeInOut"
+                            }}
+                            className="relative z-10"
+                        >
+                            <div
+                                style={{
+                                    width: 500,
+                                    height: 250,
+                                    background: 'linear-gradient(90deg, #c09847, #ebd275, #c49d45)',
+                                    maskImage: 'url(/icons/logo.svg)',
+                                    maskSize: 'contain',
+                                    maskRepeat: 'no-repeat',
+                                    maskPosition: 'center',
+                                    WebkitMaskImage: 'url(/icons/logo.svg)',
+                                    WebkitMaskSize: 'contain',
+                                    WebkitMaskRepeat: 'no-repeat',
+                                    WebkitMaskPosition: 'center',
+                                    filter: 'drop-shadow(0 0 24px #ebd27540)',
+                                }}
+                            />
+                        </motion.div>
+                    </motion.div>
+                </div>
+
+
             </div>
         </section>
-
-
     );
 }
+

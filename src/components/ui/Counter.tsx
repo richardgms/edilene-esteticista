@@ -36,11 +36,11 @@ export function Counter({ end, label, prefix = "", suffix = "" }: CounterProps) 
     }, [inView, end]);
 
     return (
-        <div ref={ref} className="flex flex-col items-center text-center p-4">
-            <span className="text-4xl md:text-5xl font-serif font-bold text-accent-dark mb-2">
+        <div ref={ref} className="flex flex-col items-center text-center p-2 md:p-4">
+            <span className="text-2xl md:text-5xl font-serif font-bold mb-0.5 md:mb-2 text-gradient-gold">
                 {prefix}{count}{suffix}
             </span>
-            <span className="text-xs md:text-sm font-medium text-text-main uppercase tracking-widest">
+            <span className="text-[10px] md:text-sm font-medium text-text-main uppercase tracking-widest leading-tight">
                 {label}
             </span>
         </div>

@@ -8,9 +8,9 @@ import { useMarquee } from "@/hooks/useMarquee";
 
 function CertCard({ cert }: { cert: typeof clinicData.courses[number] }) {
     return (
-        <div className="group flex-shrink-0 w-44 md:w-72 bg-secondary/10 rounded-2xl border border-secondary transition-all duration-300 hover:bg-secondary hover:shadow-xl hover:shadow-accent-dark/10 overflow-hidden mx-2 md:mx-3">
+        <div className="group flex-shrink-0 w-44 md:w-72 bg-secondary/10 rounded-2xl border border-white/5 hover:border-accent-dark/50 transition-all duration-500 hover:-translate-y-1 hover:shadow-xl hover:shadow-accent-dark/10 overflow-hidden mx-2 md:mx-3">
             {/* Image */}
-            <div className="w-full aspect-[1.3/1] bg-secondary/20 flex items-center justify-center border-b border-dashed border-accent-dark/20 group-hover:border-accent-dark/40 transition-colors overflow-hidden relative">
+            <div className="w-full aspect-[1.3/1] bg-secondary/20 flex items-center justify-center border-b border-white/5 group-hover:border-accent-dark/40 transition-colors overflow-hidden relative">
                 {cert.image ? (
                     <Image
                         src={cert.image}
@@ -21,7 +21,7 @@ function CertCard({ cert }: { cert: typeof clinicData.courses[number] }) {
                     />
                 ) : (
                     <div className="flex flex-col items-center gap-1 opacity-40">
-                        <Award size={24} className="text-accent-dark" />
+                        <Award size={24} style={{ color: '#ebd275' }} />
                         <span className="text-[10px] font-medium uppercase tracking-widest text-text-light text-center px-2">
                             Aguardando<br />Emissão
                         </span>
@@ -35,7 +35,7 @@ function CertCard({ cert }: { cert: typeof clinicData.courses[number] }) {
                     {cert.title}
                 </h3>
                 {cert.institution && (
-                    <p className="text-[10px] md:text-[11px] text-accent-dark font-medium uppercase tracking-wide truncate">
+                    <p className="text-[10px] md:text-[11px] font-medium uppercase tracking-wide truncate" style={{ color: '#ebd275' }}>
                         {cert.institution}
                     </p>
                 )}
@@ -63,8 +63,8 @@ function MarqueeRow({
 
     return (
         <div
-            className="w-full overflow-hidden py-2 cursor-grab active:cursor-grabbing select-none"
-            style={{ touchAction: "pan-y" }}
+            className="w-full py-5 cursor-grab active:cursor-grabbing select-none"
+            style={{ touchAction: "pan-y", overflowX: 'clip', overflowY: 'visible' }}
             onPointerDown={marquee.onPointerDown}
             onPointerMove={marquee.onPointerMove}
             onPointerUp={marquee.onPointerUp}
@@ -86,13 +86,13 @@ export function Certificates() {
     const row2 = all.slice(half);
 
     return (
-        <section id="certificates" className="w-full py-12 md:py-24 bg-accent-light/7 flex flex-col items-center overflow-hidden">
+        <section id="certificates" className="w-full py-12 md:py-24 bg-section-warm flex flex-col items-center overflow-hidden">
             <FadeIn>
                 <h2 className="text-3xl md:text-5xl font-serif font-bold mb-6 text-center text-heading px-4">
                     Certificados e Formações
                 </h2>
                 <p className="text-text-light text-center mb-6 md:mb-12 max-w-2xl text-balance mx-auto px-4">
-                    A excelência em cada atendimento é fruto de uma formação sólida e constante atualização acadêmica.
+                    A excelência em cada atendimento é fruto de uma formação que nunca para — porque você merece sempre o melhor.
                 </p>
             </FadeIn>
 

@@ -49,15 +49,15 @@ export function FlipCard({ title, description, iconName, iconImage, isLarge }: F
                             />
                         </div>
                     ) : (
-                        Icon && <Icon className="w-10 h-10 text-accent-dark mb-4" />
+                        Icon && <Icon className="w-10 h-10 mb-4" style={{ color: '#ebd275' }} />
                     )}
                     <h3 className="font-serif font-semibold text-xl text-text-main">{title}</h3>
                 </div>
 
                 {/* Back */}
-                <div className="absolute w-full h-full backface-hidden bg-accent-light text-text-main rounded-2xl p-6 flex flex-col justify-center items-center text-center rotate-y-180">
-                    <h3 className="font-serif font-semibold text-lg mb-2">{title}</h3>
-                    <p className="text-sm font-medium leading-relaxed">{description}</p>
+                <div className="absolute w-full h-full backface-hidden bg-secondary border border-accent-dark/40 text-white rounded-2xl p-6 flex flex-col justify-center items-center text-center rotate-y-180 shadow-[0_0_20px_rgba(212,175,55,0.08)] bg-[radial-gradient(circle_at_top_left,rgba(212,175,55,0.1),transparent_70%)]">
+                    <h3 className="font-serif font-semibold text-lg mb-2" style={{ color: '#ebd275' }}>{title}</h3>
+                    <p className="text-sm font-medium leading-relaxed text-text-main">{description}</p>
                 </div>
             </motion.div>
         </div>

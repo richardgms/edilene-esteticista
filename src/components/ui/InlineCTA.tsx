@@ -9,7 +9,7 @@ interface InlineCTAProps {
 }
 
 export function InlineCTA({ headline, subtext, buttonText, variant = "beige" }: InlineCTAProps) {
-    const whatsappUrl = `https://wa.me/${clinicData.phone}?text=${encodeURIComponent(clinicData.whatsappMessage)}`;
+    const bookingUrl = clinicData.bookingUrl;
 
     const bg = variant === "rose"
         ? "bg-accent-light/15 border-y border-accent-light/35"
@@ -28,7 +28,7 @@ export function InlineCTA({ headline, subtext, buttonText, variant = "beige" }: 
                         )}
                     </div>
                     <a
-                        href={whatsappUrl}
+                        href={bookingUrl}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="btn-primary text-sm md:text-base whitespace-nowrap flex-shrink-0"

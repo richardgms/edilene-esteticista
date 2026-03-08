@@ -8,13 +8,20 @@
 
 @theme {
   /* Colors */
-  --color-primary: #0a0a0a; /* Fundo predominante (Preto) */
-  --color-secondary: #171717; /* Fundo secundário para seções/cards */
-  --color-accent-light: #F3E5AB; /* Dourado suave para hover/efeitos */
-  --color-accent-dark: #D4AF37; /* Dourado puro principal */
-  --color-heading: #FFFFFF; /* Branco para títulos */
-  --color-text-main: #F8F8F8; /* Branco gelo para textos gerais */
-  --color-text-light: #A3A3A3; /* Cinza para textos de apoio */
+  --color-primary: #0a0a0a;
+  /* Fundo predominante (Preto) */
+  --color-secondary: #171717;
+  /* Fundo secundário para seções/cards */
+  --color-accent-light: #F3E5AB;
+  /* Dourado suave para hover/efeitos */
+  --color-accent-dark: #D4AF37;
+  /* Dourado puro principal */
+  --color-heading: #FFFFFF;
+  /* Branco para títulos */
+  --color-text-main: #F8F8F8;
+  /* Branco gelo para textos gerais */
+  --color-text-light: #A3A3A3;
+  /* Cinza para textos de apoio */
 
   /* Typography */
   --font-serif: var(--font-jazmin), "Playfair Display", serif;
@@ -52,15 +59,50 @@
   }
 
   .glass-nav {
-    @apply bg-primary/80 backdrop-blur-lg border-b border-white/5;
+    @apply bg-primary/80 backdrop-blur-lg;
   }
 
+  /* --- Section Background System --- */
+  /* Dark: pure flat black — no effects */
+  .bg-section-dark {
+    background-color: #0a0a0a;
+  }
+
+  /* Warm: black + golden radial auras (like Hero) — gold elements pop more */
+  .bg-section-warm {
+    background-color: #0a0a0a;
+    background-image:
+      radial-gradient(ellipse 70% 60% at top left, #ebd27514 0%, transparent 70%),
+      radial-gradient(ellipse 55% 50% at bottom right, #c0984710 0%, transparent 70%);
+  }
+
+  /* --- GRADIENT PRESET: Light Gold (from-accent-light via-accent-dark to-accent-dark) --- */
+
   .btn-primary {
-    @apply bg-accent-dark text-primary rounded-full px-6 py-3 font-medium transition-all duration-300 hover:scale-105 active:scale-95 hover:bg-accent-light;
+    /* New gradient: matches icon colors from Protocolos cards */
+    background-image: linear-gradient(90deg, #c09847, #ebd275, #c49d45);
+    @apply text-primary rounded-full px-6 py-3 font-bold uppercase tracking-[0.15em] transition-all duration-300 hover:scale-105 active:scale-95 shadow-[0_0_20px_#D4AF3733];
+  }
+
+  .text-gradient-gold {
+    background-image: linear-gradient(90deg, #c09847, #ebd275, #c49d45);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
   }
 
   .btn-secondary {
-    @apply bg-secondary border border-accent-dark text-accent-dark rounded-full px-6 py-3 font-medium transition-all duration-300 hover:bg-accent-dark/10 hover:scale-105 active:scale-95;
+    /* Gradient border technique: background contains border gradient + inner bg */
+    background-image: linear-gradient(#171717, #171717), linear-gradient(90deg, #c09847, #ebd275, #c49d45);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    border: 1.5px solid transparent;
+    color: #ebd275;
+    @apply rounded-full px-6 py-3 font-medium uppercase tracking-[0.15em] backdrop-blur-md transition-all duration-300 hover:scale-105 active:scale-95;
+  }
+
+  .btn-secondary:hover {
+    background-image: linear-gradient(#1a1a1a, #1a1a1a), linear-gradient(90deg, #c09847, #ebd275, #c49d45);
   }
 
   .perspective-1000 {

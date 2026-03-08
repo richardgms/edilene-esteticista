@@ -1,48 +1,62 @@
 import { clinicData } from "@/lib/data";
 import { Instagram, MapPin, Clock } from "lucide-react";
+import Image from "next/image";
 
 export function Footer() {
     return (
-        <footer className="w-full bg-[#3d141a] text-white py-6 md:py-16 px-4">
+        <footer className="w-full bg-primary border-t border-secondary text-white py-6 md:py-16 px-4">
             <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-12">
                 {/* Brand */}
                 <div className="flex flex-col gap-1.5 md:gap-4">
-                    <h3 className="font-serif text-xl md:text-3xl font-bold text-secondary">{clinicData.name}</h3>
+                    <div
+                        className="w-48 h-16 md:w-64 md:h-20"
+                        style={{
+                            background: 'linear-gradient(90deg, #c09847, #ebd275, #c49d45)',
+                            maskImage: 'url(/icons/logo.svg)',
+                            maskSize: 'contain',
+                            maskRepeat: 'no-repeat',
+                            maskPosition: 'left',
+                            WebkitMaskImage: 'url(/icons/logo.svg)',
+                            WebkitMaskSize: 'contain',
+                            WebkitMaskRepeat: 'no-repeat',
+                            WebkitMaskPosition: 'left'
+                        }}
+                    />
                     {/* Slogan: compacto no mobile */}
                     <p className="text-xs md:text-base text-gray-400 md:text-gray-300 italic leading-snug">
                         "{clinicData.slogan}"
                     </p>
                     {/* RT: numa linha só no mobile | bloco no desktop */}
                     <p className="text-[11px] text-gray-400 md:hidden">
-                        <span className="text-accent-light font-medium">Resp. Técnica</span> · {clinicData.professionalName}
+                        <span className="font-medium" style={{ color: '#ebd275' }}>Resp. Técnica</span> · {clinicData.professionalName}
                     </p>
                     <div className="hidden md:block mt-4">
-                        <span className="font-bold block text-accent-light mb-2">Responsável Técnica</span>
+                        <span className="font-bold block mb-2" style={{ color: '#ebd275' }}>Responsável Técnica</span>
                         <span className="text-gray-300 block">{clinicData.professionalName}</span>
                     </div>
                 </div>
 
                 {/* Contacts */}
                 <div className="flex flex-col gap-2 md:gap-4">
-                    <h4 className="hidden md:block font-bold text-lg text-secondary">Atendimento</h4>
+                    <h4 className="hidden md:block font-bold text-lg" style={{ color: '#ebd275' }}>Atendimento</h4>
                     {/* Mobile: itens em linha com flex-wrap | Desktop: coluna */}
                     <div className="flex flex-row flex-wrap gap-x-5 gap-y-2 md:flex-col md:gap-4">
                         <div className="flex items-center gap-2 text-gray-300">
-                            <WhatsAppIcon className="w-4 h-4 md:w-5 md:h-5 text-accent-light flex-shrink-0" />
+                            <WhatsAppIcon style={{ color: '#ebd275' }} className="w-4 h-4 md:w-5 md:h-5 flex-shrink-0" />
                             <a href={`https://wa.me/${clinicData.phone}`} className="hover:text-white transition-colors text-xs md:text-base">
                                 (84) 9 8146-2978
                             </a>
                         </div>
                         <div className="flex items-center gap-2 text-gray-300">
-                            <MapPin className="w-4 h-4 md:w-5 md:h-5 text-accent-light flex-shrink-0" />
+                            <MapPin style={{ color: '#ebd275' }} className="w-4 h-4 md:w-5 md:h-5 flex-shrink-0" />
                             <span className="text-xs md:text-base">{clinicData.address}</span>
                         </div>
                         <div className="flex items-center gap-2 text-gray-300">
-                            <Clock className="w-4 h-4 md:w-5 md:h-5 text-accent-light flex-shrink-0" />
+                            <Clock style={{ color: '#ebd275' }} className="w-4 h-4 md:w-5 md:h-5 flex-shrink-0" />
                             <span className="text-xs md:text-base">{clinicData.workingHours}</span>
                         </div>
                         <div className="flex items-center gap-2 text-gray-300">
-                            <Instagram className="w-4 h-4 md:w-5 md:h-5 text-accent-light flex-shrink-0" />
+                            <Instagram style={{ color: '#ebd275' }} className="w-4 h-4 md:w-5 md:h-5 flex-shrink-0" />
                             <a href={clinicData.instagram} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors text-xs md:text-base">
                                 {clinicData.instagramHandle}
                             </a>
