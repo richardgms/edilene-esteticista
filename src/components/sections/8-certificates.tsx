@@ -5,6 +5,7 @@ import { FadeIn } from "@/components/ui/FadeIn";
 import { Award } from "lucide-react";
 import Image from "next/image";
 import { useMarquee } from "@/hooks/useMarquee";
+import SplitText from "@/components/ui/SplitText";
 
 function CertCard({ cert }: { cert: typeof clinicData.courses[number] }) {
     return (
@@ -88,9 +89,12 @@ export function Certificates() {
     return (
         <section id="certificates" className="w-full py-12 md:py-24 bg-section-warm flex flex-col items-center overflow-hidden">
             <FadeIn>
-                <h2 className="text-3xl md:text-5xl font-serif font-bold mb-6 text-center text-heading px-4">
-                    Certificados e Formações
-                </h2>
+                <SplitText
+                    text="Certificados e Formações"
+                    className="text-3xl md:text-5xl font-serif font-bold mb-6 text-center text-heading px-4 block"
+                    delay={40}
+                    tag="h2"
+                />
                 <p className="text-text-light text-center mb-6 md:mb-12 max-w-2xl text-balance mx-auto px-4">
                     A excelência em cada atendimento é fruto de uma formação que nunca para — porque você merece sempre o melhor.
                 </p>

@@ -89,6 +89,17 @@
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
+    display: inline-block;
+  }
+
+  /* Fix for GSAP SplitText creating stacking contexts and making text invisible */
+  .text-gradient-gold .split-char,
+  .text-gradient-gold .split-word,
+  .text-gradient-gold .split-line {
+    background-image: linear-gradient(90deg, #c09847, #ebd275, #c49d45);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
   }
 
   .btn-secondary {

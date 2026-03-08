@@ -2,6 +2,8 @@ import Image from "next/image";
 import { clinicData } from "@/lib/data";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { CheckCircle2, Shield } from "lucide-react";
+import SplitText from "@/components/ui/SplitText";
+import { ExpandableText } from "@/components/ui/ExpandableText";
 
 export function About() {
     return (
@@ -23,13 +25,11 @@ export function About() {
                 </FadeIn>
 
                 <FadeIn direction="left" className="flex flex-col">
-                    <h2 className="text-3xl md:text-5xl font-serif font-bold mb-6 text-heading">
-                        Quem é <span className="text-gradient-gold">Edilene Barros</span>
+                    <h2 className="text-3xl md:text-5xl font-serif font-bold mb-6 text-heading flex flex-wrap gap-x-2 md:gap-x-3">
+                        <SplitText text="Quem é" delay={30} textAlign="left" className="inline-block" tag="span" />
+                        <SplitText text="Edilene Barros" delay={50} textAlign="left" className="text-gradient-gold inline-block" tag="span" />
                     </h2>
-                    <p
-                        className="text-lg text-text-light mb-8 leading-relaxed [&_strong]:font-semibold"
-                        dangerouslySetInnerHTML={{ __html: clinicData.about.description }}
-                    />
+                    <ExpandableText html={clinicData.about.description} />
 
                     <div className="flex flex-col gap-4 mb-8">
                         {clinicData.credentials.map((cred, idx) => (

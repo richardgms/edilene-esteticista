@@ -5,6 +5,7 @@ import { getWhatsAppUrl } from "@/lib/utils";
 import { FadeIn } from "@/components/ui/FadeIn";
 
 import { motion } from "framer-motion";
+import SplitText from "@/components/ui/SplitText";
 
 export function Hero() {
     return (
@@ -26,27 +27,27 @@ export function Hero() {
 
                 {/* Left Column: Content */}
                 <div className="flex flex-col items-start">
-                    <FadeIn delay={0.2} direction="down">
+                    <FadeIn delay={0.2} direction="down" animateOnLoad>
                         <span className="text-gradient-gold uppercase tracking-[0.3em] text-[12px] md:text-sm font-medium mb-8 block whitespace-nowrap">
                             Cuidado que transforma vidas
                         </span>
                     </FadeIn>
 
-                    <FadeIn delay={0.3} direction="right">
-                        <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif mb-6 md:mb-10 text-white leading-[1.1] tracking-tight">
-                            É hora de <br />
-                            <span className="italic block mt-1">cuidar da sua</span>
-                            <span className="text-gradient-gold">autoestima!</span>
-                        </h1>
-                    </FadeIn>
+                    <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif mb-6 md:mb-10 text-white leading-[1.1] tracking-tight flex flex-col items-start min-h-[160px] md:min-h-[220px]">
+                        <SplitText text="É hora de" delay={30} textAlign="left" className="block" animateOnLoad />
+                        <SplitText text="cuidar da sua" delay={50} textAlign="left" className="italic block mt-1" animateOnLoad />
+                        <SplitText text="autoestima!" delay={70} textAlign="left" className="text-gradient-gold block" animateOnLoad />
+                    </h1>
 
-                    <FadeIn delay={0.5} direction="up">
-                        <p className="text-text-light text-lg md:text-xl max-w-lg mb-6 md:mb-14 leading-relaxed">
-                            Cada cuidado criado para o seu corpo, a sua pele, a sua história.
-                        </p>
-                    </FadeIn>
+                    <SplitText
+                        text="Cada cuidado criado para o seu corpo, a sua pele, a sua história."
+                        className="text-text-light text-lg md:text-xl max-w-lg mb-6 md:mb-14 leading-relaxed"
+                        delay={30}
+                        textAlign="left"
+                        animateOnLoad
+                    />
 
-                    <FadeIn delay={0.6} direction="up">
+                    <FadeIn delay={0.6} direction="up" animateOnLoad>
                         <div className="flex flex-row gap-2 md:gap-5 w-full md:w-auto">
                             <a
                                 href={clinicData.bookingUrl}

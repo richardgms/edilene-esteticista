@@ -4,6 +4,8 @@ import { useState, useMemo } from "react";
 import { clinicData } from "@/lib/data";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { FlipCard } from "@/components/ui/FlipCard";
+import { ChevronUp } from "lucide-react";
+import SplitText from "@/components/ui/SplitText";
 import { cn } from "@/lib/utils";
 
 // Adapter: Mapeamento de "Dores/Desejos" para IDs de serviços existentes (Read-Only clinicData)
@@ -42,6 +44,7 @@ const desireCategories = [
 
 export function ServicesOption1() {
     const [activeTab, setActiveTab] = useState(desireCategories[0].id);
+    const [hasInteracted, setHasInteracted] = useState(false);
 
     // Mapeamento flat de todos os serviços para busca rápida (O(1))
     const allServicesMap = useMemo(() => {
@@ -64,9 +67,12 @@ export function ServicesOption1() {
     return (
         <section id="services-opt1" className="w-full py-10 md:py-16 px-4 bg-primary flex flex-col items-center">
             <FadeIn>
-                <h2 className="text-3xl md:text-5xl font-serif font-bold mb-4 md:mb-8 text-center text-heading">
-                    Nossos Protocolos
-                </h2>
+                <SplitText
+                    text="Nossos Protocolos"
+                    tag="h2"
+                    className="text-3xl md:text-5xl font-serif font-bold mb-4 md:mb-8 text-center text-heading block"
+                    delay={40}
+                />
                 <p className="text-text-light text-center mb-6 md:mb-10 max-w-2xl mx-auto text-lg font-medium">
                     O que você deseja cuidar hoje?
                 </p>
@@ -75,7 +81,7 @@ export function ServicesOption1() {
             {/* Tabs Acessíveis */}
             <FadeIn delay={0.2} className="w-full max-w-4xl mb-8 md:mb-12">
                 <div
-                    className="flex flex-wrap justify-center gap-2 md:gap-4 scrollbar-hide"
+                    className="grid grid-cols-2 sm:flex sm:flex-wrap justify-center gap-2 md:gap-4 scrollbar-hide"
                     role="tablist"
                     aria-label="Opções de tratamento por desejo"
                 >
@@ -88,11 +94,14 @@ export function ServicesOption1() {
                                 aria-selected={isSelected}
                                 aria-controls={`panel-${cat.id}`}
                                 id={`tab-${cat.id}`}
-                                onClick={() => setActiveTab(cat.id)}
+                                onClick={() => {
+                                    setActiveTab(cat.id);
+                                    setHasInteracted(true);
+                                }}
                                 className={cn(
-                                    "px-6 py-3 rounded-full font-medium transition-all duration-300 min-w-[140px] shadow-sm text-sm sm:text-base border",
+                                    "px-2 py-2.5 sm:px-6 sm:py-3 rounded-[1rem] sm:rounded-full font-medium transition-all duration-300 sm:min-w-[140px] shadow-sm text-[0.7rem] leading-tight sm:text-sm md:text-base border flex flex-col items-center justify-center text-center",
                                     isSelected
-                                        ? "bg-secondary text-white border-accent-dark/50 scale-105 shadow-[0_0_20px_rgba(212,175,55,0.15)] bg-[radial-gradient(circle_at_top_left,rgba(212,175,55,0.15),transparent_70%),radial-gradient(circle_at_bottom_right,rgba(212,175,55,0.1),transparent_70%)]"
+                                        ? "bg-secondary text-white border-accent-dark/50 sm:scale-105 shadow-[0_0_20px_rgba(212,175,55,0.15)] bg-[radial-gradient(circle_at_top_left,rgba(212,175,55,0.15),transparent_70%),radial-gradient(circle_at_bottom_right,rgba(212,175,55,0.1),transparent_70%)]"
                                         : "bg-white/5 text-text-light border-white/5 hover:bg-white/10 hover:text-text-main hover:scale-[1.02]"
                                 )}
                             >
@@ -102,6 +111,14 @@ export function ServicesOption1() {
                     })}
                 </div>
             </FadeIn>
+
+            {!hasInteracted && (
+                <div className="flex justify-end mb-8 xs:mb-10 sm:hidden w-full px-4">
+                    <p className="text-accent text-xs sm:text-sm font-medium flex items-center gap-1 animate-[bounce_2s_infinite] whitespace-nowrap">
+                        Veja outras opções <ChevronUp className="w-4 h-4 flex-shrink-0" />
+                    </p>
+                </div>
+            )}
 
             {/* Cards Grid ou Fallback */}
             <div
@@ -133,6 +150,6 @@ export function ServicesOption1() {
                     </FadeIn>
                 )}
             </div>
-        </section>
+        </section >
     );
 }

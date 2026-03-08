@@ -1,5 +1,6 @@
 import { clinicData } from "@/lib/data";
 import { FadeIn } from "@/components/ui/FadeIn";
+import SplitText from "@/components/ui/SplitText";
 
 export function FinalCTA() {
     return (
@@ -16,9 +17,12 @@ export function FinalCTA() {
             <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/floral-flourish.png')] opacity-[0.03] pointer-events-none"></div>
 
             <FadeIn direction="up" className="flex flex-col items-center z-10 text-center max-w-4xl">
-                <h2 className="text-3xl md:text-6xl font-serif font-bold mb-4 md:mb-8 text-white tracking-tight">
-                    Pronta para sua transformação?
-                </h2>
+                <SplitText
+                    text="Pronta para sua transformação?"
+                    className="text-3xl md:text-6xl font-serif font-bold mb-4 md:mb-8 text-white tracking-tight block"
+                    delay={40}
+                    tag="h2"
+                />
                 <p className="text-text-light text-base md:text-2xl mb-8 md:mb-14 max-w-2xl text-balance leading-relaxed">
                     Agende uma avaliação personalizada e descubra o cuidado ideal para revelar a sua beleza de dentro para fora.
                 </p>

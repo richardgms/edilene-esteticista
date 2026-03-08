@@ -1,14 +1,16 @@
 import { FadeIn } from "@/components/ui/FadeIn";
 import { clinicData } from "@/lib/data";
 import { Star } from "lucide-react";
+import SplitText from "@/components/ui/SplitText";
 
 export function Testimonials() {
     return (
         <section id="testimonials" className="w-full py-12 md:py-24 bg-primary flex flex-col items-center overflow-hidden">
             <div className="w-full max-w-6xl px-4 flex flex-col items-center text-center mb-4 md:mb-16">
                 <FadeIn className="max-w-2xl">
-                    <h2 className="text-2xl md:text-5xl font-serif font-bold mb-3 md:mb-6 text-heading">
-                        O que dizem sobre a <span className="text-gradient-gold">Edilene</span>
+                    <h2 className="text-2xl md:text-5xl font-serif font-bold mb-3 md:mb-6 text-heading flex flex-wrap justify-center gap-x-2 md:gap-x-3">
+                        <SplitText text="O que dizem sobre a" delay={30} textAlign="center" className="inline-block" tag="span" />
+                        <SplitText text="Edilene" delay={50} textAlign="center" className="text-gradient-gold inline-block" tag="span" />
                     </h2>
                     <p className="text-text-light text-sm md:text-lg">
                         Histórias reais de mulheres que resgataram a autoestima e a confiança através do cuidado da Edilene.

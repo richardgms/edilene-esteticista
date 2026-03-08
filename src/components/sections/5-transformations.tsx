@@ -1,14 +1,18 @@
 import { clinicData } from "@/lib/data";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { AutoImageSlider } from "@/components/ui/AutoImageSlider";
+import SplitText from "@/components/ui/SplitText";
 
 export function Transformations() {
     return (
         <section id="results" className="w-full py-12 md:py-24 px-4 bg-section-warm flex flex-col items-center">
             <FadeIn>
-                <h2 className="text-3xl md:text-5xl font-serif font-bold mb-6 text-center text-heading">
-                    Transformações Reais
-                </h2>
+                <SplitText
+                    text="Transformações Reais"
+                    className="text-3xl md:text-5xl font-serif font-bold mb-6 text-center text-heading block"
+                    delay={40}
+                    tag="h2"
+                />
                 <p className="text-text-light text-center mb-6 md:mb-12 max-w-2xl text-balance mx-auto">
                     Cada resultado é real, documentado e conquistado com dedicação. Veja a evolução de quem passou pelas mãos da Edilene.
                 </p>
