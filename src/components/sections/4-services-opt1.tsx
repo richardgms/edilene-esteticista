@@ -13,22 +13,22 @@ const desireCategories = [
     {
         id: "reduzir-medidas",
         label: "Reduzir Medidas",
-        serviceIds: ["c2", "c3", "c4"] // Massagem Modeladora, Eletrolipólise, Ultrassom
+        serviceIds: ["c2", "c3", "c4", "c7", "c8", "c9", "c10"] // Modeladora, Eletrolipólise, Ultrassom, Enzimas, Manta, Hidrolipoclasia, Vacuoterapia
     },
     {
         id: "rejuvenescer",
-        label: "Rejuvenescer o Rosto",
-        serviceIds: ["c5", "f2", "f3"] // Radiofrequência, Peeling, Dermaplaning
+        label: "Rejuvenescer",
+        serviceIds: ["c5", "f2", "f5", "fc1", "f3"] // Radiofrequência, Peeling, Botox, Microagulhamento, Dermaplaning
     },
     {
         id: "relaxar",
         label: "Relaxar & Desinchar",
-        serviceIds: ["c1"] // Drenagem Linfática
+        serviceIds: ["c1", "c6", "c11"] // DLM, Massagem Relaxante, Ventosaterapia
     },
     {
-        id: "limpeza",
-        label: "Limpeza Profunda",
-        serviceIds: ["f1"] // Limpeza de Pele
+        id: "pele-perfeita",
+        label: "Pele Perfeita",
+        serviceIds: ["f1", "f3", "pe2", "fk1"] // Limpeza, Dermaplaning, Estrias, LED
     },
     {
         id: "pelos",
@@ -38,7 +38,7 @@ const desireCategories = [
     {
         id: "cabelos-detalhes",
         label: "Cabelos & Detalhes",
-        serviceIds: ["a2", "a1", "f4"] // Mesoterapia, Acrocórdons, Designer
+        serviceIds: ["a2", "fk1", "a1", "pe1", "f4"] // Mesoterapia, LED, Acrocórdons, PEIM, Designer
     }
 ];
 

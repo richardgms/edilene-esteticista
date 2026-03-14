@@ -12,8 +12,8 @@ export function Testimonials() {
                         <SplitText text="O que dizem sobre a" delay={30} textAlign="center" className="inline-block" tag="span" />
                         <SplitText text="Edilene" delay={50} textAlign="center" className="text-gradient-gold inline-block" tag="span" />
                     </h2>
-                    <p className="text-text-light text-sm md:text-lg">
-                        Histórias reais de mulheres que resgataram a autoestima e a confiança através do cuidado da Edilene.
+                    <p className="text-text-light text-sm md:text-lg italic">
+                        Avaliações reais extraídas diretamente do perfil profissional da Edilene no Google Business.
                     </p>
                 </FadeIn>
             </div>
